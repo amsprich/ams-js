@@ -1,0 +1,98 @@
+html,body {
+    margin: 0;
+    padding: 0;
+}
+flash-cards {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background: #181818;
+    color: white;
+    box-sizing: border-box;
+    padding-top: 60px;
+}
+card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap:20px;
+    padding: 20px 30px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    padding: 20px;
+}
+
+answer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    visibility: hidden;
+    font-family: "Nunito Sans", "Extra Sans JP", "Noto Sans Symbols2", "Segoe UI", "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Sans GB", "Meiryo", sans-serif;
+}
+
+reading {
+    font-size: 2rem;
+}
+
+card.showAnswer answer {
+    visibility: visible;
+}
+
+buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+buttons * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    color: #666;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 80px;
+    height: 36px;
+}
+buttons *:hove {
+    background-color: #292929;
+}
+buttons *:active {
+    background-color: #1d1d1d;
+}
+
+close {
+    width:25px;
+    height:25px;
+    font-size: 1rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+button.flashcards {
+    border: none;
+    background-color: #3b7def;
+    color: #fff;
+    font-family: "Nunito Sans","Extra Sans JP","Noto Sans Symbols2","Segoe UI","Noto Sans JP","Noto Sans CJK JP","Hiragino Sans GB","Meiryo",sans-serif;
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    border-radius: 6px;
+}
