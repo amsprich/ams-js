@@ -56,7 +56,7 @@ const render = (parent, html, store, wiring) => {
 
 
 window.startFlashCards = function() {
-    const vocab = Array.from(document.querySelectorAll(".entry"))
+    const vocab = window.vocab ?? Array.from(document.querySelectorAll(".entry"))
         .filter(i => i.querySelector(".tag").innerText !== "Redundant")
         .map(i => ({
             word: Array.from(i.querySelectorAll("a:first-child ruby")).map(r => {
@@ -100,11 +100,14 @@ window.startFlashCards = function() {
     };
 
     const shift = ({ set, state }, dir) => {
-        flip({set, state });
-        if (state.showAnswer)
+        if (!state.showAnswer)
+            set('showAnswer', true)
+        else {
+            set('showAnswer', false)
             dir === "r" 
                 ? set('idx', Math.min(state.idx + 1,state.vocab.length-1))
                 : set('idx', Math.max(state.idx - 1,0));
+        }
     }
 
 
@@ -119,7 +122,7 @@ window.startFlashCards = function() {
         },
         {
             $: "reading",
-            watch: { current: (el,{current}) => el.innerText = current.word === current.reading ? "" : current.reading}
+            watch: { current: (el,{current}) => el.innerText = current.word === current.reading ? " " : current.reading}
         },
         {
             $: "definition",
@@ -155,4 +158,7 @@ window.startFlashCards = function() {
     render(document.body, html, store, wiring);
 };
 
-appendHtml(document.querySelector(".dropdown"), `<button class="flashcards" onclick="startFlashCards()">Flashcards</button>`);
+appendHtml(
+    document.querySelector(".dropdown"), 
+    `<button class="flashcards" onclick="startFlashCards()">Flashcards</button>`
+);

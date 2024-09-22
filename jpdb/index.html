@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="./flash-cards.css" />
+</head>
+<body>
+    <div class="dropdown"></div>
+    <script>
+        vocab = [
+            {
+                "word": "育つ",
+                "definition": "to be raised (e.g. child); to be brought up; to grow (up)",
+                "reading": "そだつ"
+            },
+            {
+                "word": "屋敷",
+                "definition": "residence; estate; grounds; premises; mansion",
+                "reading": "やしき"
+            },
+            {
+                "word": "置きっぱなし",
+                "definition": "leaving something where it is; abandoning something",
+                "reading": "おきっぱなし"
+            },
+            {
+                "word": "さる",
+                "definition": "to leave; to go away; to pass; to elapse; to be distant; to send away; to drive off",
+                "reading": "さる"
+            },
+            {
+                "word": "野原",
+                "definition": "field; plain; prairie; moor",
+                "reading": "のはら"
+            },
+            {
+                "word": "素敵",
+                "definition": "lovely; wonderful; nice; great; fantastic; superb",
+                "reading": "すてき"
+            },
+            {
+                "word": "散らかる",
+                "definition": "to be in disorder; to lie scattered around",
+                "reading": "ちらかる"
+            },
+            {
+                "word": "ローリエ",
+                "definition": "bay leaf",
+                "reading": "ローリエ"
+            },
+            {
+                "word": "内緒",
+                "definition": "secrecy; confidentiality; privacy; one's circumstances (esp. fiscal)",
+                "reading": "ないしょ"
+            },
+            {
+                "word": "ずいぶん",
+                "definition": "very; extremely; terrible; horrid; remarkable; extraordinary",
+                "reading": "ずいぶん"
+            },
+            {
+                "word": "もん",
+                "definition": "indicates reason or excuse; indicates dissatisfaction; indicates desire to be pampered or indulged",
+                "reading": "もん"
+            },
+            {
+                "word": "生き物",
+                "definition": "living thing; living creature; animal; life",
+                "reading": "いきもの"
+            },
+            {
+                "word": "一族",
+                "definition": "family; relatives; dependents; household",
+                "reading": "いちぞく"
+            },
+            {
+                "word": "ヒキガエル",
+                "definition": "toad (esp. the Japanese toad, Bufo japonicus)",
+                "reading": "ヒキガエル"
+            },
+            {
+                "word": "シソ",
+                "definition": "shiso (Perilla frutescens var. crispa); perilla; beefsteak plant",
+                "reading": "シソ"
+            },
+            {
+                "word": "香り",
+                "definition": "aroma; fragrance; scent; smell",
+                "reading": "かおり"
+            },
+            {
+                "word": "砂糖",
+                "definition": "sugar",
+                "reading": "さとう"
+            },
+            {
+                "word": "借りる",
+                "definition": "to borrow; to have a loan; to rent; to hire",
+                "reading": "かりる"
+            },
+            {
+                "word": "借り",
+                "definition": "borrowing; debt; loan",
+                "reading": "かり"
+            },
+            {
+                "word": "増える",
+                "definition": "to increase; to multiply",
+                "reading": "ふえる"
+            },
+            {
+                "word": "隠れる",
+                "definition": "to hide; to be hidden; to conceal oneself; to disappear",
+                "reading": "かくれる"
+            },
+            {
+                "word": "凶暴",
+                "definition": "ferocious; brutal; atrocious; savage; barbarous",
+                "reading": "きょうぼう"
+            },
+            {
+                "word": "生きていく",
+                "definition": "to subsist; to keep on living",
+                "reading": "いきていく"
+            },
+            {
+                "word": "かもしれない",
+                "definition": "may; might; perhaps; may be; possibly",
+                "reading": "かもしれない"
+            },
+            {
+                "word": "遠慮",
+                "definition": "reserve; constraint; declining; refraining; forethought; foresight",
+                "reading": "えんりょ"
+            },
+            {
+                "word": "奥様",
+                "definition": "wife; your wife; his wife; married lady; madam",
+                "reading": "おくさま"
+            },
+            {
+                "word": "網戸",
+                "definition": "window screen; insect screen; mosquito screen; screen; screen door",
+                "reading": "あみど"
+            },
+            {
+                "word": "角砂糖",
+                "definition": "cube sugar; sugar cube",
+                "reading": "かくざとう"
+            },
+            {
+                "word": "しっかり",
+                "definition": "tightly (holding on); firmly; strongly (built); solidly; properly; well",
+                "reading": "しっかり"
+            },
+            {
+                "word": "つかむ",
+                "definition": "to seize; to catch; to obtain; to acquire; to understand; to grasp",
+                "reading": "つかむ"
+            },
+            {
+                "word": "暮らす",
+                "definition": "to live; to get along; to spend (time)",
+                "reading": "くらす"
+            },
+            {
+                "word": "獲物",
+                "definition": "prey; catch; kill; spoils; trophy; loot",
+                "reading": "えもの"
+            },
+            {
+                "word": "とがる",
+                "definition": "to taper to a point; to become pointed; to become sharp; to look displeased; to look sour; to be on edge",
+                "reading": "とがる"
+            },
+            {
+                "word": "足りる",
+                "definition": "to be sufficient; to be enough; to be worth doing; to be worthy of; to do (the job); to serve",
+                "reading": "たりる"
+            },
+            {
+                "word": "仕方ない",
+                "definition": "there's no (other) way; cannot be helped; unavoidable; it's no use (doing); pointless; hopeless (person)",
+                "reading": "しかたない"
+            },
+            {
+                "word": "奥",
+                "definition": "inner part; inside; interior; depths (e.g. of a forest); back (of a house, drawer, etc.); bottom (e.g. of one's heart)",
+                "reading": "おく"
+            }
+        ];
+    </script>
+    <script src="./flash-cards.js"></script>
+</body>
+</html>
