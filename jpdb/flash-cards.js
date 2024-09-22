@@ -155,4 +155,4 @@ window.startFlashCards = function() {
     render(document.body, html, store, wiring);
 };
 
-appendHtml(document.querySelector(".dropdown details"), `<button class="flashcards" onclick="startFlashCards()">Flashcards</button>`);
+appendHtml(document.querySelector(".dropdown"), `<button class="flashcards" onclick="startFlashCards()">Flashcards</button>`);

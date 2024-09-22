@@ -62,7 +62,6 @@ buttons * {
     justify-content: center;
     align-items: center;
     border: 1px solid #333;
-    color: #666;
     border-radius: 6px;
     cursor: pointer;
     user-select: none;
